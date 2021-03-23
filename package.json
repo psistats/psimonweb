@@ -1,0 +1,16 @@
+{
+  "name": "psimonweb",
+  "version": "0.0.1",
+  "repository": "https://github.com/psistats/psimonweb",
+  "private": true,
+  "workspaces": [
+    "shared/**",
+    "apps/**",
+    "servers/**"
+  ],
+  "scripts": {},
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  },
+  "dependencies": {}
+}
