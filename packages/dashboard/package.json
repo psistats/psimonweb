@@ -1,8 +1,9 @@
 {
-  "name": "app",
-  "version": "0.1.0",
+  "name": "@psimonweb/dashboard",
+  "version": "0.0.1",
   "private": true,
   "dependencies": {
+    "@psimonweb/shared": "^0.0.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",

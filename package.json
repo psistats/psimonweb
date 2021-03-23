@@ -4,9 +4,7 @@
   "repository": "https://github.com/psistats/psimonweb",
   "private": true,
   "workspaces": [
-    "shared/**",
-    "apps/**",
-    "servers/**"
+    "packages/**"
   ],
   "scripts": {},
   "devDependencies": {
