@@ -6,10 +6,10 @@ import { Server, Socket } from 'socket.io';
 import cors from 'cors';
 
 
-const sockets: Array<Socket> = [];
-
 const app = express();
 app.use(cors());
+
+app.use(express.static('public'));
 
 const httpServer = new http.Server(app);
 
@@ -18,10 +18,16 @@ const io = new Server(httpServer, {
   cors: {
     origin: "*",
     methods: ["GET", "POST"]
-  }
+  },
+
+  path: '/dashboard'
 });
 
-io.on('connection', (socket) => {
+io.on('connect', (socket) => {
+  socket.on('disconnect', (err) => {
+    console.error('disconnect: ', err);
+  });
+  console.log('socketio connected');
 });
 
 
@@ -32,7 +38,7 @@ const mqttopts: IClientOptions = {
   host: 'psikon.com',
   protocol: 'mqtts',
   username: 'psistats',
-  password: ''
+  password: '@.!&uLwxUj+0(QU8/{uj'
 }
 
 const mqttclient = mqtt.connect(mqttopts);
@@ -43,5 +49,5 @@ mqttclient.on('message', (topic, message) => {
 });
 
 httpServer.listen(port, () => {
-  console.log('http://localhost:' + port);
+  console.log('Dashboard server listening on http://localhost:' + port);
 });

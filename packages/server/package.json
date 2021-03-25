@@ -1,9 +1,10 @@
 {
   "name": "@psimonweb/server",
   "version": "0.0.1",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
   "scripts": {
-    "serve": "ts-node src/index.ts"
+    "serve": "ts-node src/index.ts",
+    "build": "tsc --project ./tsconfig.json"
   },
   "dependencies": {
     "@psimonweb/shared": "0.0.1",
